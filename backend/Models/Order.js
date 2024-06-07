@@ -1,16 +1,17 @@
-// models/order.js
-const mongoose = require('mongoose');
+import mongoose , {model} from "mongoose";
+const {Schema} = mongoose;
+const {ObjectId} = mongoose.Schema.Types;
 
-const orderSchema = new mongoose.Schema({
+const orderSchema = new Schema({
   user: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: ObjectId,
     ref: 'User',
     required: true,
   },
   products: [
     {
       product: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: ObjectId,
         ref: 'Product',
         required: true,
       },

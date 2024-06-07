@@ -1,24 +1,24 @@
+import connectToMongo from './database/db.js';
 import express from "express";
-import mongoose from "mongoose";
 import productRoutes from "./routes/product.js";
-import userRoutes from "./routes/order.js";
-import orderRoutes from "./routes/user.js";
+import orderRoutes from "./routes/order.js";
+import userRoutes from "./routes/user.js";
+import cors from "cors"
 
+connectToMongo();
+const app = express();
 const port = 4000;
 
-const app = express();
+
 app.use(express.json());
-
-mongoose.connect('mongodb://localhost:27017/ecommerce', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+app.use(cors())
 
 
 
-// app.use('/products', productRoutes);
-// app.use('/users', userRoutes);
-// app.use('/orders', orderRoutes);
+
+app.use('/api/products', productRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/users', userRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

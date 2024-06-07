@@ -1,7 +1,7 @@
-// models/product.js
-const mongoose = require('mongoose');
+import mongoose , {model} from "mongoose";
+const {Schema} = mongoose;
 
-const productSchema = new mongoose.Schema({
+const productSchema = new Schema({
   name: {
     type: String,
     required: true,
