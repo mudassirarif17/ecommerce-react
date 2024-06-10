@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.custom-before::before {
+  @apply content-[""];
+  @apply absolute;
+  @apply top-0;
+  @apply bottom-0;
+  @apply right-0;
+  @apply w-1/2;
+  @apply bg-cover;
+  @apply bg-center;
+  @apply z-0;
+  background-image: url('./assets/rightside.png');
+
+  }
+
+.add-width-right{
+    @apply w-[94vw];
+    @apply transform;
+    @apply transition-width ease-in duration-300;
+}
+
+.default-width-right{
+  @apply w-[78vw];
+  @apply transform;
+  @apply transition-width ease-in duration-300;
+}
+
+.default-width-left{
+  @apply w-[22vw];
+  @apply transform;
+  @apply transition-width ease-in duration-300;
+}
+
+.add-width-left{
+  @apply w-[6vw];
+  @apply transform;
+  @apply transition-width ease-in duration-300;
+}
+
+.hide-icon-text{
+  @apply hidden;
+}
+

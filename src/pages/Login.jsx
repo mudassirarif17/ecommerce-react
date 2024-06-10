@@ -2,7 +2,7 @@ import React from 'react';
 import RightSide from "../assets/rightside.png";
 import Frame from "../assets/Frame.png";
 import Frame1 from "../assets/Frame1.png";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/Logo.png";
 
 const Login = () => {
     return (
