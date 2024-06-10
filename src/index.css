@@ -46,3 +46,10 @@
   @apply hidden;
 }
 
+@media (max-width: 768px) {
+  .main-content {
+     flex-direction: column;
+   }
+  .top-bar {
+     flex-direction: column;
+  }} 
