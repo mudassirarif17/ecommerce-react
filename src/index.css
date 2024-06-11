@@ -46,10 +46,25 @@
   @apply hidden;
 }
 
-@media (max-width: 768px) {
-  .main-content {
-     flex-direction: column;
-   }
-  .top-bar {
-     flex-direction: column;
-  }} 
+.mbl-click-add{
+  @apply absolute;
+  @apply left-[0px];
+  @apply top-0;
+  @apply transition-all ease-in duration-300;
+}
+
+.mbl-click-remove{
+  @apply absolute;
+  @apply left-[-377px];
+  @apply top-0;
+  @apply transition-all ease-in duration-300;
+}
+
+@media screen and (max-width : 750px) {
+  .default-width-right {
+    width: 100vw;
+  }
+
+
+}
+
