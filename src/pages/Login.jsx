@@ -2,7 +2,8 @@ import React from 'react';
 import RightSide from "../assets/rightside.png";
 import Frame from "../assets/Frame.png";
 import Frame1 from "../assets/Frame1.png";
-import Logo from "../assets/Logo.png";
+import Brand from "../assets/brand.png";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -10,7 +11,8 @@ const Login = () => {
             <div className="login-scr flex">
 
                 <div className='left-side h-[100vh] w-[100vw] md:w-[50vw] flex flex-col justify-center items-center'>
-                    <img className='h-[50px]' src={Logo} alt="" />
+                <div className='bg-[#5A67BA] flex justify-center items-center w-[40px] h-[40px] rounded-full mx-2'><span className='text-white text-md  mochiy-pop-p-one-regular'>G</span>
+                    </div>
                     <h1 className='text-center text-3xl font-bold'>LOGIN</h1>
                     <p className='text-center text-gray-700 my-3 font-semibold'>How to i get started lorem ipsum dolor at?</p>
                     <div className='flex md:justify-center items-center bg-[#F0EDFF] w-[80vw] md:w-[28vw] h-[6.6vh] px-1 rounded-lg my-3'>
@@ -25,16 +27,18 @@ const Login = () => {
                         <button className='px-4 rounded-lg py-2 bg-gradient-to-r from-[#9181F4] to-[#5038ED] text-white font-bold hover:bg[#5038ED]'>Login Now</button>
                     </div>
                     <div>
-                        <a className='font-bold hover:underline' href="">Create Account</a>
+                        <Link to="/signup" className='font-bold hover:underline' href="">Create Account</Link>
                     </div>
                 </div>
 
-                <div className='hidden md:block right-side h-[100vh] w-[50vw]'>
-                        <img className='h-[100vh] w-[50vw]' src={RightSide} alt="Right-side-bg" />
-                        <div className='absolute top-0'>
-                        <div className='flex'>
-                            
-                        </div>
+                <div className='custom-before hidden md:flex items-center justify-center right-side h-[100vh] w-[50vw]'>
+                    <div className="box relative z-50 flex md:w-[23vw] lg:w-[22vw] md:h-[62vh] lg:h-[60vh] border border-white rounded-3xl bg-white bg-opacity-30 ">
+                        <p className='md:text-xl lg:text-2xl font-semibold px-6 py-6 text-white'>Very good <br />
+                            works are <br />
+                            waiting for <br />
+                            you Login <br />
+                            Now!!!</p>
+                        <img className='absolute md:top-[35px] md:left-[22px] lg:left-[30px] lg:top-[30px] w-[40vw] h-[55vh]' src={ Brand } alt="" />
                     </div>
                 </div>
 
