@@ -15,7 +15,6 @@
   @apply bg-center;
   @apply z-0;
   background-image: url('./assets/rightside.png');
-
   }
 
 .add-width-right{
@@ -55,7 +54,21 @@
 
 .mbl-click-remove{
   @apply absolute;
-  @apply left-[-377px];
+  @apply left-[-90vw];
+  @apply top-0;
+  @apply transition-all ease-in duration-300;
+}
+
+.cart-click-add{
+  @apply absolute;
+  @apply right-[0px];
+  @apply top-0;
+  @apply transition-all ease-in duration-300;
+}
+
+.cart-click-remove{
+  @apply absolute;
+  @apply right-[-90vw];
   @apply top-0;
   @apply transition-all ease-in duration-300;
 }
@@ -63,6 +76,13 @@
 @media screen and (max-width : 750px) {
   .default-width-right {
     width: 100vw;
+  }
+
+  .cart-click-add{
+    @apply absolute;
+    @apply right-[0px];
+    @apply top-0;
+    @apply transition-all ease-in duration-300;
   }
 }
 

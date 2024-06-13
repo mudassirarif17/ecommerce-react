@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AllProducts from './dashboard/AllProducts'
 import AllOrders from './dashboard/AllOrders'
 import HomeDashboard from './dashboard/HomeDashboard'
+import Home from './pages/Home'
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     <div>
         <BrowserRouter>
           <Routes>
+            <Route path="/" element={<Home/>}/>
             <Route path="/dashboard" element={<HomeDashboard/>}/>
             <Route path="/add_product" element={<AddProduct/>}/>
             <Route path="/all_products" element={<AllProducts/>}/>
