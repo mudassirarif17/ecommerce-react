@@ -1,11 +1,15 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import Layout from './Layout'
+import hero from "../assets/heroimg.png";
+
 
 const Home = () => {
   return (
-    <div>
-        <Navbar />
-    </div>
+    <Layout>
+        <div>
+          <img src={hero} alt="" />
+        </div>
+    </Layout>
   )
 }
 
