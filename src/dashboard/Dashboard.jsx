@@ -123,7 +123,7 @@ const Dashboard = ({children}) => {
 
                 </div>
 
-                <div id='right-side' className="right-side w-[100vw] default-width-right h-[100vh]">
+                <div id='right-side' className="right-side w-[100vw] default-width-right h-[100vh] overflow-y-auto">
 
                     <div id='right-side-child' className="top h-[8vh] md:h-[10vh] default-width-right flex justify-center items-center">
                         
