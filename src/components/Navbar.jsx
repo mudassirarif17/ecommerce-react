@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React, { useState } from 'react'
 import { FaWindows } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -38,8 +38,8 @@ const Navbar = () => {
     }
 
     return (
-        <div>
-            <div className="navbar h-[8vh] md:h-[12vh] w-[100vw] shadow-xl flex justify-evenly items-center">
+        <div className='sticky top-0'>
+            <div className="bg-white navbar cursor-pointer h-[8vh] md:h-[12vh] w-[100vw] shadow-xl flex justify-evenly items-center">
                 <div className="menu-icon block md:hidden">
                     <FaWindows onClick={mobileSlider} className='text-[#5A67BA] text-3xl' />
                 </div>
@@ -50,26 +50,26 @@ const Navbar = () => {
                 </div>
 
                 <ul className="nav-items md:flex space-x-6 cursor-pointer text-[#5A67BA] font-semibold text-xl hidden">
-                    <li>Home</li>
-                    <li>Tshirts</li>
-                    <li>Hoodies</li>
-                    <li>Sticker</li>
-                    <li>Mugs</li>
+                    <Link className='hover:border-b border-[#5A67BA]' to="/">Home</Link>
+                    <Link className='hover:border-b border-[#5A67BA]' to="/tshirts">Tshirts</Link>
+                    <Link className='hover:border-b border-[#5A67BA]' to="/hoodies">Hoodies</Link>
+                    <Link className='hover:border-b border-[#5A67BA]' to="/stickers">Sticker</Link>
+                    <Link className='hover:border-b border-[#5A67BA]' to="/mugs">Mugs</Link>
                 </ul>
 
                 <div className='flex items-center gap-2'>
                     <div className='hidden md:block'>
-                        <button className='bg-[#5A67BA] text-white px-4 py-1 rounded-lg font-medium active:bg-[#5A45BA] mr-1'>Login</button>
-                        <button className='bg-[#5A67BA] text-white px-4 py-1 rounded-lg font-medium active:bg-[#5A45BA] mr-1'>Register</button>
+                        <button className='bg-[#5A67BA] text-white px-4 py-1 rounded-lg font-medium active:bg-[#5A45BA] mr-1'>Signin</button>
                     </div>
-                    <div>
-                        <FaShoppingCart onClick={CartSlider} className='text-[#5A67BA] text-3xl cursor-pointer' />
+                    <div className='relative' onClick={CartSlider}>
+                        <FaShoppingCart className='text-[#5A67BA] text-3xl cursor-pointer' />
+                        <div className='bg-red-600 w-[20px] h-[20px] text-white rounded-full flex justify-center items-center absolute -top-2 -right-2'>2</div>
                     </div>
                 </div>
             </div>
 
             <div id='mobile-slider' className="block md:hidden mbl-menu h-[100vh] mbl-click-remove w-[88vw] bg-[#F1F2F7]">
-            <div className="logo flex justify-around items-center my-4">
+                <div className="logo flex justify-around items-center my-4">
                     <h1 id='logo-text' className='text-[#5A67BA] flex items-center md:text-lg lg:text-2xl font-semibold mochiy-pop-p-one-regular'><div className='bg-[#5A67BA] flex justify-center items-center w-[40px] h-[40px] rounded-full mx-2'><span className='text-white text-md  mochiy-pop-p-one-regular'>G</span>
                     </div>GOODSHOP</h1>
                     <div className='bg-[#5A67BA] flex justify-center items-center w-[40px] h-[40px] rounded-full mx-2'><IoIosCloseCircleOutline onClick={mobileSlider} className='text-white text-md  mochiy-pop-p-one-regular text-3xl' /></div>
@@ -83,7 +83,7 @@ const Navbar = () => {
                             <h1 className='md:text-md lg:text-xl pl-4 roboto-light icon-text'>Home</h1>
                         </Link>
 
-                        <Link to="/tshirt" onClick={() => setActive("tshirt")} className={`flex list_item ml-[22px] my-5 hover:bg-[#5A67BA] cursor-pointer hover:text-[#C7CEFF] rounded-lg px-3 py-2 ${active === 'tshirt' ? 'bg-[#C7CEFF]' : ''} ${active === 'tshirt' ? 'text-[#5A67BA]' : 'text-[#5A67BA]'}`}
+                        <Link to="/tshirts" onClick={() => setActive("tshirt")} className={`flex list_item ml-[22px] my-5 hover:bg-[#5A67BA] cursor-pointer hover:text-[#C7CEFF] rounded-lg px-3 py-2 ${active === 'tshirt' ? 'bg-[#C7CEFF]' : ''} ${active === 'tshirt' ? 'text-[#5A67BA]' : 'text-[#5A67BA]'}`}
                         >
                             <IoShirt className='text-xl md:text-3xl' />
                             <h1 className='md:text-md lg:text-xl pl-4 roboto-light icon-text'>Tshirts</h1>
@@ -131,11 +131,20 @@ const Navbar = () => {
             </div>
 
             <div id='cart-slider' className="cart cart-click-remove h-[100vh] w-[88vw] md:w-[25vw] bg-[#F1F2F7]">
-            <div className="logo flex justify-around items-center my-4">
+                <div className="logo flex justify-around items-center my-4">
+
                     <h1 id='logo-text' className='text-[#5A67BA] flex items-center md:text-lg lg:text-2xl font-semibold mochiy-pop-p-one-regular'><div className='bg-[#5A67BA] flex justify-center items-center w-[40px] h-[40px] rounded-full mx-2'><span className='text-white text-md  mochiy-pop-p-one-regular'>G</span>
                     </div>GOODSHOP</h1>
                     <div className='bg-[#5A67BA] flex justify-center items-center w-[40px] h-[40px] rounded-full mx-2'><IoIosCloseCircleOutline onClick={CartSlider} className='text-white text-md  mochiy-pop-p-one-regular text-3xl cursor-pointer' /></div>
                 </div>
+
+                <ol>
+                    <li className='my-1 flex justify-evenly'><span>Item-1 - Rs # 3000</span> <div className='flex'><div className='text-white text-xl font-semibold h-[25px] w-[25px] rounded-full bg-[#5A67BA] mx-2 flex justify-center items-center'>+</div><span className='qty'>2</span><div className='text-white text-xl font-semibold h-[25px] w-[25px] rounded-full bg-[#5A67BA] mx-2 flex justify-center items-center'>-</div></div></li>
+
+                    <li className='my-1 flex justify-evenly'><span>Item-1 - Rs # 3000</span> <div className='flex'><div className='text-white text-xl font-semibold h-[25px] w-[25px] rounded-full bg-[#5A67BA] mx-2 flex justify-center items-center'>+</div><span className='qty'>2</span><div className='text-white text-xl font-semibold h-[25px] w-[25px] rounded-full bg-[#5A67BA] mx-2 flex justify-center items-center'>-</div></div></li>
+                    
+                </ol>
+                <p className='ml-10'>Total Rs 3000</p>
             </div>
 
         </div>
